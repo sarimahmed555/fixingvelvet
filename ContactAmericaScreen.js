@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Switch, TextInput, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native';
 import Svg, { G, Path, Rect, Defs, ClipPath } from 'react-native-svg';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { FONT_POPPINS, COLORS } from './src/utils/theme';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeIcon = () => (
   <Svg width={wp('8%')} height={hp('4%')} viewBox="0 0 32 29" fill="none">
@@ -20,7 +22,8 @@ const HomeIcon = () => (
 );
 
 const ContactAmericaScreen = () => {
-  const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -35,15 +38,21 @@ const ContactAmericaScreen = () => {
               {/* Header */}
               <View style={styles.headerShadow} />
               <View style={styles.header}>
-                <TouchableOpacity style={styles.arrowLeft}>
-                  {/* Placeholder for back arrow */}
-                  <View style={styles.arrowBox} />
+                <TouchableOpacity 
+                  style={styles.arrowLeft}
+                  onPress={() => navigation.goBack()}
+                >
+                  {/* Back arrow */}
+                  <View style={styles.arrowBox}>
+                    <Svg width={wp('3%')} height={hp('2%')} viewBox="0 0 10 16" fill="none">
+                      <Path d="M8 2L2 8L8 14" stroke="#404348" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </Svg>
+                  </View>
                 </TouchableOpacity>
                 <Text style={styles.headerTitle}>Contact America C.</Text>
-                <TouchableOpacity style={styles.arrowRight}>
-                  {/* Placeholder for forward arrow */}
-                  <View style={styles.arrowBox} />
-                </TouchableOpacity>
+                <View style={styles.arrowRight}>
+                  {/* Empty view for layout balance */}
+                </View>
               </View>
               {/* Service Section */}
               <Text style={styles.sectionLabel}>Service</Text>
@@ -89,8 +98,8 @@ const ContactAmericaScreen = () => {
                 <Switch
                   value={isSwitchOn}
                   onValueChange={setIsSwitchOn}
-                  trackColor={{ false: '#D9D9D9', true: '#8F9E73' }}
-                  thumbColor={isSwitchOn ? '#fff' : '#fff'}
+                  trackColor={{ false: '#D9D9D9', true: COLORS.Primary }}
+                  thumbColor={COLORS.StaticWhite}
                   style={styles.switch}
                 />
               </View>
@@ -98,13 +107,26 @@ const ContactAmericaScreen = () => {
                 <Text style={styles.rowLabel}>Message</Text>
               </View>
               <View style={styles.messageBox}>
-                <Text style={styles.messageHint}>Tell America C. a little about your request...</Text>
+                <TextInput
+                  style={styles.messageInput}
+                  placeholder="Tell America C. a little about your request..."
+                  placeholderTextColor={COLORS.TextPrimary}
+                  multiline={true}
+                />
               </View>
             </View>
           </ScrollView>
           {/* Send Request Button fixed at the bottom */}
           <View style={styles.sendButtonWrapper}>
-            <TouchableOpacity style={styles.sendButton}>
+            <TouchableOpacity 
+              style={styles.sendButton}
+              onPress={() => {
+                // Show a toast or alert that the request was sent
+                alert('Request sent successfully!');
+                // Navigate to the MainTabs
+                navigation.navigate('MainTabs');
+              }}
+            >
               <Text style={styles.sendButtonText}>Send Request</Text>
             </TouchableOpacity>
           </View>
@@ -164,22 +186,22 @@ const styles = StyleSheet.create({
     height: wp('6%'),
     backgroundColor: '#E0E0E0',
     borderRadius: wp('3%'),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   headerTitle: {
-    fontFamily: 'Poppins',
-    fontWeight: '400',
+    fontFamily: FONT_POPPINS.regularFont,
     fontSize: RFValue(16),
-    color: '#404348',
+    color: COLORS.TextPrimary,
     textAlign: 'center',
   },
   sectionLabel: {
     position: 'absolute',
     top: hp('13%'),
     left: wp('5%'),
-    fontFamily: 'Poppins',
-    fontWeight: '400',
+    fontFamily: FONT_POPPINS.regularFont,
     fontSize: RFValue(14),
-    color: '#404348',
+    color: COLORS.TextPrimary,
   },
   serviceRow: {
     flexDirection: 'row',
@@ -190,16 +212,14 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   serviceTitle: {
-    fontFamily: 'Poppins',
-    fontWeight: '500',
+    fontFamily: FONT_POPPINS.mediumFont,
     fontSize: RFValue(12),
-    color: '#404348',
+    color: COLORS.TextPrimary,
   },
   serviceSubtitle: {
-    fontFamily: 'Poppins',
-    fontWeight: '400',
+    fontFamily: FONT_POPPINS.regularFont,
     fontSize: RFValue(12),
-    color: '#404348',
+    color: COLORS.TextPrimary,
   },
   homeIconBox: {
     width: wp('8%'),
@@ -224,10 +244,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   sectionTitle: {
-    fontFamily: 'Poppins',
-    fontWeight: '600',
+    fontFamily: FONT_POPPINS.semiBoldFont,
     fontSize: RFValue(14),
-    color: '#404348',
+    color: COLORS.TextPrimary,
   },
   rowBox: {
     flexDirection: 'row',
@@ -244,22 +263,19 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   rowLabel: {
-    fontFamily: 'Poppins',
-    fontWeight: '500',
+    fontFamily: FONT_POPPINS.mediumFont,
     fontSize: RFValue(12),
-    color: '#404348',
+    color: COLORS.TextPrimary,
   },
   rowValue: {
-    fontFamily: 'Poppins',
-    fontWeight: '400',
+    fontFamily: FONT_POPPINS.regularFont,
     fontSize: RFValue(12),
-    color: '#404348',
+    color: COLORS.TextPrimary,
   },
   rowValueLink: {
-    fontFamily: 'Poppins',
-    fontWeight: '400',
+    fontFamily: FONT_POPPINS.regularFont,
     fontSize: RFValue(12),
-    color: '#404348',
+    color: COLORS.TextPrimary,
     textAlign: 'right',
     textDecorationLine: 'underline',
   },
@@ -270,36 +286,36 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(169, 165, 159, 0.1)',
     borderColor: 'rgba(216, 216, 216, 0.76)',
     borderWidth: 1,
-    height: hp('5%'),
+    height: hp('10%'),
     marginTop: hp('0.7%'),
     paddingHorizontal: wp('5%'),
     borderRadius: RFValue(5),
-    justifyContent: 'center',
     width: '100%',
     alignSelf: 'center',
   },
-  messageHint: {
-    fontFamily: 'Poppins',
-    fontWeight: '500',
+  messageInput: {
+    fontFamily: FONT_POPPINS.regularFont,
     fontSize: RFValue(12),
-    color: '#404348',
+    color: COLORS.TextPrimary,
+    height: hp('10%'),
+    textAlignVertical: 'top',
+    paddingTop: hp('1%'),
   },
   sendButton: {
     alignSelf: 'center',
     width: wp('80%'),
     height: hp('6%'),
-    backgroundColor: '#8F9E73',
-    borderColor: '#A9A59F',
+    backgroundColor: COLORS.Primary,
+    borderColor: COLORS.BorderPrimary,
     borderWidth: 1,
     borderRadius: RFValue(35),
     justifyContent: 'center',
     alignItems: 'center',
   },
   sendButtonText: {
-    fontFamily: 'Poppins',
-    fontWeight: '600',
+    fontFamily: FONT_POPPINS.semiBoldFont,
     fontSize: RFValue(14),
-    color: '#fff',
+    color: COLORS.StaticWhite,
     textAlign: 'center',
   },
   sendButtonWrapper: {

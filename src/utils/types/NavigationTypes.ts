@@ -1,5 +1,6 @@
 export type RootStackNavigationType = {
     AuthStack: undefined,
+    MainTabs: undefined,
   };
   
   export type AuthStackNavigationType = {
@@ -16,10 +17,17 @@ export type RootStackNavigationType = {
     GeneralSettings: undefined,
     Notification: undefined,
     Inbox: undefined,
+    InboxTabs: undefined,
     YourPets: undefined,
+    PaymentHistory: undefined,
+    NotificationsSettings: undefined,
+    ContactAmerica: undefined,
   };
   
   
   export type BottomTabNavigationType = {
-    
+    Inbox: undefined,
+    Search: undefined,
+    YourPets: undefined,
+    More: undefined,
   };

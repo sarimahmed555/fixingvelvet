@@ -18,6 +18,9 @@ import NotificationsScreen from '../screens/Notifications/NotificationsScreen';
 import ContactAmericaScreen from '../../ContactAmericaScreen';
 import InboxScreen from '../screens/Inbox/InboxScreen';
 import YourPetsScreen from '../screens/YourPets/YourPetsScreen';
+import PaymentHistoryScreen from '../screens/PaymentHistory/PaymentHistoryScreen';
+import NotificationsSettingsScreen from '../screens/NotificationsSettings/NotificationsSettingsScreen';
+import InboxTabsScreen from '../screens/InboxScreen/InboxTabsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,7 +45,10 @@ const Stack = createNativeStackNavigator();
             <Stack.Screen name={'Notification'} component={NotificationsScreen} />
             <Stack.Screen name={'ContactAmerica'} component={ContactAmericaScreen} />
             <Stack.Screen name={'Inbox'} component={InboxScreen} />
+            <Stack.Screen name={'InboxTabs'} component={InboxTabsScreen} />
             <Stack.Screen name={'YourPets'} component={YourPetsScreen} />
+            <Stack.Screen name={'PaymentHistory'} component={PaymentHistoryScreen} />
+            <Stack.Screen name={'NotificationsSettings'} component={NotificationsSettingsScreen} />
         </Stack.Navigator>
     )
 }
