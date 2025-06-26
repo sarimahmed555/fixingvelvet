@@ -48,7 +48,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'Entypo' && (
         <Entypo
           disabled
-          
+          name={icon as any}
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -57,7 +57,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'Ionicons' && (
         <Ionicons
           disabled
-          name={icon} 
+          name={icon as any} 
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -66,9 +66,8 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'FontAwesome' && (
         <FontAwesome
           disabled
-          name={icon}
+          name={icon as any}
           style={iconStyle}
-          
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -77,9 +76,8 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'FontAwesome6' && (
         <FontAwesome6
           disabled
-          name={icon}
+          name={icon as any}
           style={iconStyle}          
-          
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -88,7 +86,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'Fontisto' && (
         <Fontisto
           disabled
-          
+          name={icon as any}
           style={iconStyle}          
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
@@ -98,9 +96,8 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'FontAwesome5' && (
         <FontAwesome5
           disabled
-          name={icon}
+          name={icon as any}
           style={iconStyle}          
-          
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -109,8 +106,8 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'Feather' && (
         <Feather
           disabled
+          name={icon as any}
           style={iconStyle}          
-          
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -119,8 +116,8 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'MaterialIcons' && (
         <MaterialIcons
           disabled
+          name={icon as any}
           style={iconStyle}          
-          
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -129,8 +126,8 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       {type == 'MaterialCommunityIcons' && (
         <MaterialCommunityIcons
           disabled
+          name={icon as any}
           style={iconStyle}          
-          
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -138,7 +135,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       )}
       {type == 'Foundation' && (
         <Foundation
-          
+          name={icon as any}
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -146,7 +143,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       )}
       {type == 'AntDesign' && (
         <AntDesign
-          
+          name={icon as any}
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -154,7 +151,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       )}
       {type == 'SimpleLineIcons' && (
         <SimpleLineIcons
-          
+          name={icon as any}
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -162,7 +159,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       )}
       {type == 'EvilIcons' && (
         <EvilIcons
-          
+          name={icon as any}
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}
@@ -170,7 +167,7 @@ export const CustomIcon: React.FC<CustomIconProps> = ({
       )}
       {type == 'Octicons' && (
         <Octicons
-          
+          name={icon as any}
           color={color || COLORS.NeutralGrey100}
           size={size || RFValue(20)}
           {...rest}

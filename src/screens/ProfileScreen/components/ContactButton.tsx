@@ -1,7 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, ViewStyle } from 'react-native';
 
-const ContactButton = ({ style }) => (
+interface ContactButtonProps {
+  style?: ViewStyle;
+}
+
+const ContactButton: React.FC<ContactButtonProps> = ({ style }) => (
   <View style={[styles.container, style]}>
     <TouchableOpacity style={styles.button} onPress={() => {}}>
       <Text style={styles.buttonText}>Contact this sitter</Text>

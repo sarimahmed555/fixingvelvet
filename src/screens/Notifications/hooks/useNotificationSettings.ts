@@ -62,11 +62,11 @@ export const smsSettingsList = [
 ];
 
 export function useNotificationSettings() {
-  const [emailToggles, setEmailToggles] = useState({
+  const [emailToggles, setEmailToggles] = useState<{ [key: string]: boolean }>({
     'email-notifications': false,
     'marketing-emails': false,
   });
-  const [smsToggles, setSmsToggles] = useState({
+  const [smsToggles, setSmsToggles] = useState<{ [key: string]: boolean }>({
     'sms-general': false,
     'sms-messages': false,
     'new-inquiries': false,

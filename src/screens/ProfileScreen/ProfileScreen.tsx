@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, View, StyleSheet, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
-import { RootStackParamList } from '../../navigation/types';
+import { AuthStackNavigationType } from '../../utils/types/NavigationTypes';
 import ProfileHeader from './components/ProfileHeader';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
@@ -11,7 +11,7 @@ import LocationMap from './components/LocationMap';
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 const ProfileScreen = () => {
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<NavigationProp<AuthStackNavigationType>>();
   const [activeTab, setActiveTab] = useState('Info'); // 'Info', 'Reviews', 'Services'
 
   return (

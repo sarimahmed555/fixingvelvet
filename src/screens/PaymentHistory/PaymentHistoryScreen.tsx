@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { FONT_POPPINS, COLORS } from '../../utils/theme';
 import Svg, { Path } from 'react-native-svg';
+import { AuthStackNavigationType } from '../../utils/types/NavigationTypes';
 
 const BackIcon = () => (
   <Svg width={wp('6%')} height={hp('2.5%')} viewBox="0 0 24 24" fill="none">
@@ -14,7 +15,7 @@ const BackIcon = () => (
 );
 
 const PaymentHistoryScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<AuthStackNavigationType>>();
   const [activeTab, setActiveTab] = useState('Earning');
 
   const tabs = ['Earning', 'Pending Earnings', 'Withdrawals', 'Payment', 'Payment issues', 'Other'];

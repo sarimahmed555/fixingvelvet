@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { FONT_POPPINS, COLORS, FONT_PACIFICO } from '../../utils/theme';
 import Svg, { Path } from 'react-native-svg';
+import { AuthStackNavigationType } from '../../utils/types/NavigationTypes';
 
 const BellIcon = () => (
   <Svg width={wp('7%')} height={hp('3%')} viewBox="0 0 24 24" fill="none">
@@ -25,7 +26,7 @@ const HourglassIcon = () => (
 );
 
 const InboxTabsScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<AuthStackNavigationType>>();
   const [activeTab, setActiveTab] = useState('Unread');
 
   const tabs = ['Primary', 'Unread', 'pending'];
