@@ -12,22 +12,12 @@ import ErrorBoundary from 'react-native-error-boundary';
 import RootStack from './src/navigation/RootStack';
 // import RootStack from './src/navigation/RootStack';
 
-
+// Import font assets
+import { FontAssets } from './src/utils/assetImports';
 
 const App = (): React.JSX.Element =>{
   
-  const [fontsLoaded] = useFonts({
-    // Poppins
-    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
-    'Poppins-ExtraBold': require('./assets/fonts/Poppins-ExtraBold.ttf'),
-    'Poppins-ExtraLight': require('./assets/fonts/Poppins-ExtraLight.ttf'),
-    'Poppins-Light': require('./assets/fonts/Poppins-Light.ttf'),
-    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf'),
-    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
-    // Pacifico
-    'Pacifico-Regular': require('./assets/fonts/Pacifico-Regular.ttf'),
-  });
+  const [fontsLoaded] = useFonts(FontAssets);
 
   if (!fontsLoaded) return <></>;
   
