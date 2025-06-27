@@ -9,7 +9,7 @@ const Stack = createStackNavigator<RootStackNavigationType>();
 
 const RootStack = () => {
     function getInitialRoute(): "AuthStack" {
-        return 'AuthStack'
+        return 'AuthStack';
     }
 
     return (
@@ -17,16 +17,16 @@ const RootStack = () => {
             screenOptions={{
                 headerShown: false,
             }}
-        initialRouteName={getInitialRoute()}
+            initialRouteName={getInitialRoute()}
         >
             <Stack.Screen name="AuthStack" component={AuthStack} />
             <Stack.Screen name="MainTabs" component={BottomTabNavigator} />
             
         </Stack.Navigator>
-    )
+    );
 }
 
-export default RootStack
+export default RootStack;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 

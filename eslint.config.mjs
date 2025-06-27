@@ -6,7 +6,8 @@ import pluginReact from "eslint-plugin-react";
 export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  ...pluginReact.configs.flat.recommended,
+  // Fix for pluginReact.configs.flat.recommended not being iterable
+  pluginReact.configs.recommended,
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: {

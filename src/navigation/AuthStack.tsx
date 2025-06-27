@@ -15,7 +15,7 @@ import MoreScreen from '../screens/MoreScreen/MoreScreen';
 import SettingsScreen from '../screens/SettingsScreen/SettingScreen';
 import GeneralSettingsScreen from '../screens/GeneralSetting/GeneralSettingsScreen';
 import NotificationsScreen from '../screens/Notifications/NotificationsScreen';
-import ContactAmericaScreen from '../../ContactAmericaScreen';
+import ContactAmericaScreen from '../screens/ContactAmerica/ContactAmericaScreen';
 import InboxScreen from '../screens/Inbox/InboxScreen';
 import YourPetsScreen from '../screens/YourPets/YourPetsScreen';
 import PaymentHistoryScreen from '../screens/PaymentHistory/PaymentHistoryScreen';
@@ -50,10 +50,10 @@ const Stack = createNativeStackNavigator();
             <Stack.Screen name={'PaymentHistory'} component={PaymentHistoryScreen} />
             <Stack.Screen name={'NotificationsSettings'} component={NotificationsSettingsScreen} />
         </Stack.Navigator>
-    )
+    );
 }
 
-export default AuthStack
+export default AuthStack;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 
