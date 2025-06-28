@@ -15,12 +15,12 @@ import MoreScreen from '../screens/MoreScreen/MoreScreen';
 import SettingsScreen from '../screens/SettingsScreen/SettingScreen';
 import GeneralSettingsScreen from '../screens/GeneralSetting/GeneralSettingsScreen';
 import NotificationsScreen from '../screens/Notifications/NotificationsScreen';
-import ContactAmericaScreen from '../screens/ContactAmerica/ContactAmericaScreen';
 import InboxScreen from '../screens/Inbox/InboxScreen';
 import YourPetsScreen from '../screens/YourPets/YourPetsScreen';
 import PaymentHistoryScreen from '../screens/PaymentHistory/PaymentHistoryScreen';
 import NotificationsSettingsScreen from '../screens/NotificationsSettings/NotificationsSettingsScreen';
 import InboxTabsScreen from '../screens/InboxScreen/InboxTabsScreen';
+import SendRequestScreen from '../../SendRequestScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,7 +43,7 @@ const Stack = createNativeStackNavigator();
             <Stack.Screen name={'Settings'} component={SettingsScreen} />
             <Stack.Screen name={'GeneralSettings'} component={GeneralSettingsScreen} />
             <Stack.Screen name={'Notification'} component={NotificationsScreen} />
-            <Stack.Screen name={'ContactAmerica'} component={ContactAmericaScreen} />
+            <Stack.Screen name={'SendRequest'} component={SendRequestScreen} />
             <Stack.Screen name={'Inbox'} component={InboxScreen} />
             <Stack.Screen name={'InboxTabs'} component={InboxTabsScreen} />
             <Stack.Screen name={'YourPets'} component={YourPetsScreen} />

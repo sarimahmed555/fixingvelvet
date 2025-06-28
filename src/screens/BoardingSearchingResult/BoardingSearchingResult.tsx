@@ -20,14 +20,13 @@ import { useBoardingSearching } from './hooks/useBoardingSearching';
 import { ProfileCard } from './components/ProfileCard';
 import { AuthStackNavigationType } from '../../utils/types/NavigationTypes';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
-import ContactAmericaScreen from '../../../ContactAmericaScreen';
 
 export const BoardingSearching: React.FC = () => {
   const { profiles, loading, refreshProfiles } = useBoardingSearching();
   const navigation = useNavigation<NavigationProp<AuthStackNavigationType>>();
 
   const handleProfilePress = (profileId: string) => {
-    navigation.navigate('ContactAmerica');
+    navigation.navigate('SendRequest');
   };
 
   return (

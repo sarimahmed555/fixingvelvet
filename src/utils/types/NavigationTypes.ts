@@ -21,7 +21,7 @@ export type RootStackNavigationType = {
     YourPets: undefined,
     PaymentHistory: undefined,
     NotificationsSettings: undefined,
-    ContactAmerica: undefined,
+    SendRequest: undefined,
   };
   
   

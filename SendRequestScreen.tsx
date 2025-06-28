@@ -21,7 +21,7 @@ const HomeIcon = () => (
   </Svg>
 );
 
-const ContactAmericaScreen = () => {
+const SendRequestScreen = (props) => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const navigation = useNavigation();
 
@@ -334,4 +334,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ContactAmericaScreen; 
+export default SendRequestScreen; 
